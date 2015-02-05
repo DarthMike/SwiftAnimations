@@ -13,7 +13,7 @@ internal class Animation {
     }
     
     let action: AnimationAction
-    var duration: NSTimeInterval = 1.0
+    var duration: NSTimeInterval = 0.4
     var options: UIViewAnimationOptions = .CurveEaseInOut
     
     var next: Animation?

@@ -77,6 +77,8 @@ There is a big problem with this approach, and it is readability. Swift can make
 of the current function, but I would say that it is very ugly code. And I believe that animation and UI code should be crystal clear, so you don't have to
 run everything to see what will move around, and where.
 
+See more [in the article I wrote](http://www.miqu.me/blog/2015/02/05/swift-animations/)
+
 #Author
 
 [Miguel Angel Quiñones](http://miqu.me) / [@miguelquinon](http://twitter.com/miguelquinon)

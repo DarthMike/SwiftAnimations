@@ -10,20 +10,37 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        animate {
-            self.testView.center.x += 100
-            }.withDuration(5.0).thenAnimate {
-                self.testView.center.x -= 200
-            }.withDuration(2.0).withOptions(UIViewAnimationOptions.CurveEaseInOut).thenAnimate {
-                self.testView.transform = CGAffineTransformMakeScale(1.5, 1.5)
-            }.thenAnimate {
-                self.testView.transform = CGAffineTransformRotate(self.testView.transform, CGFloat(M_PI))
-            }.thenAnimate {
-                self.testView.transform = CGAffineTransformIdentity
-            }.start()
+        
     }
 
+    @IBAction func startAnimations() {
+        let reset: Void->Void = {
+            self.red.transform = CGAffineTransformIdentity
+            self.green.transform = CGAffineTransformIdentity
+            self.yellow.transform = CGAffineTransformIdentity
+            self.blue.transform = CGAffineTransformIdentity
+        }
+        
+        animate {
+            self.red.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+        }.thenAnimate {
+            self.green.transform = CGAffineTransformMakeRotation(-CGFloat(M_PI_2))
+        }.thenAnimate {
+            self.blue.transform = CGAffineTransformMakeScale(1.5, 1)
+        }.withOptions(.CurveEaseOut).thenAnimate {
+            self.yellow.transform = CGAffineTransformMakeScale(1, 1.5)
+        }.withOptions(.CurveEaseOut).thenAnimate {
+            let scale = CGAffineTransformMakeScale(0.5, 0.5)
+            self.red.transform = scale
+            self.green.transform = scale
+            self.blue.transform = scale
+            self.yellow.transform = scale
+        }.thenAnimate(reset).start()
+    }
     
-    @IBOutlet private var testView: UIView!
+    @IBOutlet private var red: UIView!
+    @IBOutlet private var green: UIView!
+    @IBOutlet private var blue: UIView!
+    @IBOutlet private var yellow: UIView!
 }
 

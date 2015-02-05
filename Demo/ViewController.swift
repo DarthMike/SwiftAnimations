@@ -1,9 +1,6 @@
 //
-//  ViewController.swift
-//  Demo
-//
-//  Created by Miguel Angel Quinones on 05/02/2015.
-//  Copyright (c) 2015 miqu. All rights reserved.
+//  Created by Miguel Angel Quinones
+//  Copyright 2015 Miguel Angel Quinones. See LICENSE
 //
 
 import UIKit

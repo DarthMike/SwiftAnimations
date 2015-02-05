@@ -1,6 +1,6 @@
 //
 //  Created by Miguel Angel Quinones
-//  Copyright 2015 Miguel Angel Quinones. See LICENSE.
+//  Copyright 2015 Miguel Angel Quinones. See LICENSE
 //
 
 #import <UIKit/UIKit.h>

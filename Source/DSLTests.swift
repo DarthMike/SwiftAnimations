@@ -1,9 +1,8 @@
 //
 //  Created by Miguel Angel Quinones
-//  License: See LICENSE
+//  Copyright 2015 Miguel Angel Quinones. See LICENSE
 //
 
-import UIKit
 import XCTest
 
 class DSLTests: XCTestCase {

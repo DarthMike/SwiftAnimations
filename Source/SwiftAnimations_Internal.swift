@@ -5,6 +5,12 @@
 
 import UIKit
 
+
+internal struct AnimationDefaults {
+    static let defaultDuration: NSTimeInterval  = 0.4
+    static let defaultCurve: UIViewAnimationOptions = .CurveEaseOut
+}
+
 internal class Animation {
     typealias AnimationAction = Void -> Void
     
@@ -13,8 +19,8 @@ internal class Animation {
     }
     
     let action: AnimationAction
-    var duration: NSTimeInterval = 0.4
-    var options: UIViewAnimationOptions = .CurveEaseInOut
+    var duration: NSTimeInterval = AnimationDefaults.defaultDuration
+    var options: UIViewAnimationOptions = AnimationDefaults.defaultCurve
     
     var next: Animation?
 }

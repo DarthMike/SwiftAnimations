@@ -21,7 +21,9 @@ animate {
   self.green.transform = scale
   self.blue.transform = scale
   self.yellow.transform = scale
-}.start()
+}.completion { completed in
+  println("Completed!")
+}
 ```
 
 #Features

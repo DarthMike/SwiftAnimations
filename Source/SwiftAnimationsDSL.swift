@@ -37,19 +37,26 @@ public struct Animator {
     
     
     // MARK: Finish calls
-    public func start() {
+    public func completion(completion:AnimationCompletion?) {
         let first = animations.first
-        self.animateRecursive(first)
+        self.animateRecursive(first, completion)
     }
     
-    private func animateRecursive(animation: Animation) {
+    private func animateRecursive(animation: Animation, completion: AnimationCompletion? = nil) {
         UIView.animateWithDuration(animation.duration, delay: 0.0, options: animation.options, animations: animation.action) {
             completed in
+            
             if let next = animation.next {
-                self.animateRecursive(next)
+                self.animateRecursive(next, completion: completion)
+                return;
+            }
+            
+            if let completion = completion {
+                completion(completed)
             }
         }
     }
     
+    public typealias AnimationCompletion = Bool->Void
     private let animations: AnimationList
 }

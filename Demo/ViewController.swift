@@ -35,7 +35,9 @@ class ViewController: UIViewController {
             self.green.transform = scale
             self.blue.transform = scale
             self.yellow.transform = scale
-        }.thenAnimate(reset).start()
+        }.thenAnimate(reset).completion { completed in
+            println("Completed!")
+        }
     }
     
     @IBOutlet private var red: UIView!

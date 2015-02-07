@@ -5,24 +5,26 @@
 
 import UIKit
 
+// MARK: DSL entry point
+
 public func animate(action:Void->Void) -> Animator {
     let firstAnimation = Animation(action: action)
     let list = AnimationList(first: firstAnimation)
     return Animator(animations: list)
 }
 
+// MARK: Follow up calls
+
 public struct Animator {
+    
+    // MARK: Chaining animations calls
     public func thenAnimate(action: Void->Void) -> Animator {
         let newAnimation = Animation(action: action)
         self.animations.append(newAnimation)
         return self
     }
     
-    public func start() {
-        let first = animations.first
-        self.animateRecursive(first)
-    }
-    
+    // MARK: Modification calls
     public func withDuration(duration: NSTimeInterval) -> Animator {
         self.animations.last.duration = duration
         return self
@@ -31,6 +33,13 @@ public struct Animator {
     public func withOptions(options: UIViewAnimationOptions) -> Animator {
         self.animations.last.options = options
         return self
+    }
+    
+    
+    // MARK: Finish calls
+    public func start() {
+        let first = animations.first
+        self.animateRecursive(first)
     }
     
     private func animateRecursive(animation: Animation) {

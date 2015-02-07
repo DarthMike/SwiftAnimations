@@ -5,12 +5,13 @@
 
 import UIKit
 
-
+// MARK: Defaults
 internal struct AnimationDefaults {
     static let defaultDuration: NSTimeInterval  = 0.4
     static let defaultCurve: UIViewAnimationOptions = .CurveEaseOut
 }
 
+// MARK: Internal animation data structures
 internal class Animation {
     typealias AnimationAction = Void -> Void
     

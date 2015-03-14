@@ -5,11 +5,37 @@
 
 import UIKit
 
-// MARK: Defaults
-internal struct AnimationDefaults {
-    static let defaultDuration: NSTimeInterval  = 0.4
-    static let defaultCurve: UIViewAnimationOptions = .CurveEaseOut
+// MARK: Curve->Options
+extension UIViewAnimationOptions {
+    static func fromCurve(curve: UIViewAnimationCurve) -> UIViewAnimationOptions {
+        switch curve {
+        case .EaseIn:
+            return .CurveEaseIn
+        case .EaseInOut:
+            return .CurveEaseInOut
+        case .EaseOut:
+            return .CurveEaseOut
+        case .Linear:
+            return .CurveLinear
+        }
+    }
 }
+
+// MARK: Defaults
+
+internal struct AnimationValues  {
+    var duration: NSTimeInterval  = 0.4
+    var options: UIViewAnimationOptions = .CurveEaseOut
+    var type: AnimationType = .Regular
+}
+
+internal struct SpringValues  {
+    var damping: CGFloat = 0.4
+    var initialVelocity: CGFloat = 0.2
+}
+
+var globalDefaults = AnimationValues()
+var globalSpringDefaults = SpringValues()
 
 // MARK: Internal animation data structures
 internal class Animation {
@@ -17,11 +43,13 @@ internal class Animation {
     
     init(action: AnimationAction) {
         self.action = action
+        self.configuration = globalDefaults
+        self.springConfiguration = globalSpringDefaults
     }
     
     let action: AnimationAction
-    var duration: NSTimeInterval = AnimationDefaults.defaultDuration
-    var options: UIViewAnimationOptions = AnimationDefaults.defaultCurve
+    var configuration: AnimationValues
+    var springConfiguration: SpringValues
     
     var next: Animation?
 }

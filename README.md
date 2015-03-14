@@ -42,8 +42,8 @@ animate(flip(self.avatarView))
 ```
 
 - Unifying constants and animation defaults across application
-- Suggestions and pull requests welcome :)
 - Support for spring as well as standard animations
+- Suggestions and pull requests welcome :)
 
 #Why?
 

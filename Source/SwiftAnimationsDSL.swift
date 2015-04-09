@@ -59,7 +59,7 @@ public struct Animator {
     // MARK: Finish calls
     public func completion(completion:AnimationCompletion?) {
         let first = animations.first
-        self.animateRecursive(first, completion)
+        self.animateRecursive(first, completion: completion)
     }
     
     private func animateRecursive(animation: Animation, completion: AnimationCompletion? = nil) {

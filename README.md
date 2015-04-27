@@ -1,3 +1,5 @@
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 # SwiftAnimations
 
 `SwiftAnimations` is a small DSL to chain of animations on top of UIKit, unify animation parameters across all application and simplify even more your animation code.
@@ -123,6 +125,14 @@ Add the pod to your `Podfile`. Being a Swift-only library, it is required to be 
 use_frameworks!
 pod 'SwiftAnimations'
 ```
+
+##Carthage
+Add the repository to your Cartfile.
+```Bash
+github "DarthMike/SwiftAnimations"
+```
+
+Then drag and drop the produced SwiftAnimations.framework from Carthage/build
 
 ##Manual
 Just drop into your project the files under Source directory.

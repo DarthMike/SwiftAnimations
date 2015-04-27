@@ -12,8 +12,31 @@
 		473689231A83C39F00C0F08F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473689211A83C39F00C0F08F /* Main.storyboard */; };
 		473689251A83C39F00C0F08F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473689241A83C39F00C0F08F /* Images.xcassets */; };
 		473689281A83C39F00C0F08F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 473689261A83C39F00C0F08F /* LaunchScreen.xib */; };
-		473689561A83CD3500C0F08F /* SwiftAnimations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473689551A83CD3500C0F08F /* SwiftAnimations.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E74C57941AEEE725002CFDF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E74C578F1AEEE725002CFDF7 /* SwiftAnimations.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 473688C31A83C0C300C0F08F;
+			remoteInfo = SwiftAnimations;
+		};
+		E74C57961AEEE725002CFDF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E74C578F1AEEE725002CFDF7 /* SwiftAnimations.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 473688CE1A83C0C300C0F08F;
+			remoteInfo = SwiftAnimationsTests;
+		};
+		E74C57981AEEE72E002CFDF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E74C578F1AEEE725002CFDF7 /* SwiftAnimations.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 473688C21A83C0C300C0F08F;
+			remoteInfo = SwiftAnimations;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		473689181A83C39F00C0F08F /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -23,7 +46,7 @@
 		473689221A83C39F00C0F08F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		473689241A83C39F00C0F08F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		473689271A83C39F00C0F08F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		473689551A83CD3500C0F08F /* SwiftAnimations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftAnimations.framework; path = "../../../Library/Developer/Xcode/DerivedData/SwiftAnimations-amuzhfxgxunurcbrmixltueptbkg/Build/Products/Debug-iphoneos/SwiftAnimations.framework"; sourceTree = "<group>"; };
+		E74C578F1AEEE725002CFDF7 /* SwiftAnimations.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftAnimations.xcodeproj; path = ../SwiftAnimations.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				473689561A83CD3500C0F08F /* SwiftAnimations.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +63,7 @@
 		4736890F1A83C39F00C0F08F = {
 			isa = PBXGroup;
 			children = (
-				473689551A83CD3500C0F08F /* SwiftAnimations.framework */,
+				E74C578F1AEEE725002CFDF7 /* SwiftAnimations.xcodeproj */,
 				4736891A1A83C39F00C0F08F /* Demo */,
 				473689191A83C39F00C0F08F /* Products */,
 			);
@@ -76,6 +98,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E74C57901AEEE725002CFDF7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E74C57951AEEE725002CFDF7 /* SwiftAnimations.framework */,
+				E74C57971AEEE725002CFDF7 /* SwiftAnimationsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -90,6 +121,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E74C57991AEEE72E002CFDF7 /* PBXTargetDependency */,
 			);
 			name = Demo;
 			productName = Demo;
@@ -121,12 +153,35 @@
 			mainGroup = 4736890F1A83C39F00C0F08F;
 			productRefGroup = 473689191A83C39F00C0F08F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E74C57901AEEE725002CFDF7 /* Products */;
+					ProjectRef = E74C578F1AEEE725002CFDF7 /* SwiftAnimations.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				473689171A83C39F00C0F08F /* Demo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E74C57951AEEE725002CFDF7 /* SwiftAnimations.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftAnimations.framework;
+			remoteRef = E74C57941AEEE725002CFDF7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E74C57971AEEE725002CFDF7 /* SwiftAnimationsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftAnimationsTests.xctest;
+			remoteRef = E74C57961AEEE725002CFDF7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		473689161A83C39F00C0F08F /* Resources */ = {
@@ -152,6 +207,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E74C57991AEEE72E002CFDF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftAnimations;
+			targetProxy = E74C57981AEEE72E002CFDF7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		473689211A83C39F00C0F08F /* Main.storyboard */ = {
@@ -257,6 +320,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SwiftAnimations-amuzhfxgxunurcbrmixltueptbkg/Build/Products/Debug-iphoneos",
+					"/Users/mquinones/Desktop/projects/SwiftAnimations/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -271,6 +335,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SwiftAnimations-amuzhfxgxunurcbrmixltueptbkg/Build/Products/Debug-iphoneos",
+					"/Users/mquinones/Desktop/projects/SwiftAnimations/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

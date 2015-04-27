@@ -10,7 +10,6 @@
 		473688CF1A83C0C300C0F08F /* SwiftAnimations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473688C31A83C0C300C0F08F /* SwiftAnimations.framework */; };
 		473689411A83C3FE00C0F08F /* SwiftAnimations.h in Headers */ = {isa = PBXBuildFile; fileRef = 4736893E1A83C3FE00C0F08F /* SwiftAnimations.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		473689421A83C3FE00C0F08F /* SwiftAnimationsDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4736893F1A83C3FE00C0F08F /* SwiftAnimationsDSL.swift */; };
-		473689481A83C43600C0F08F /* DSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473689471A83C43600C0F08F /* DSLTests.swift */; };
 		473689581A83CEE300C0F08F /* SwiftAnimations_Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473689571A83CEE300C0F08F /* SwiftAnimations_Internal.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +28,6 @@
 		473688CE1A83C0C300C0F08F /* SwiftAnimationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAnimationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4736893E1A83C3FE00C0F08F /* SwiftAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwiftAnimations.h; path = Source/SwiftAnimations.h; sourceTree = SOURCE_ROOT; };
 		4736893F1A83C3FE00C0F08F /* SwiftAnimationsDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftAnimationsDSL.swift; path = Source/SwiftAnimationsDSL.swift; sourceTree = SOURCE_ROOT; };
-		473689471A83C43600C0F08F /* DSLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DSLTests.swift; path = Source/DSLTests.swift; sourceTree = SOURCE_ROOT; };
 		473689531A83C6B900C0F08F /* SwiftAnimations-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAnimations-Info.plist"; path = "Resources/SwiftAnimations-Info.plist"; sourceTree = SOURCE_ROOT; };
 		473689541A83C6B900C0F08F /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Tests-Info.plist"; path = "Resources/Tests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		473689571A83CEE300C0F08F /* SwiftAnimations_Internal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftAnimations_Internal.swift; path = Source/SwiftAnimations_Internal.swift; sourceTree = SOURCE_ROOT; };
@@ -74,7 +72,6 @@
 		473688C51A83C0C300C0F08F /* SwiftAnimations */ = {
 			isa = PBXGroup;
 			children = (
-				473689471A83C43600C0F08F /* DSLTests.swift */,
 				4736894A1A83C4E400C0F08F /* Resources */,
 				473689571A83CEE300C0F08F /* SwiftAnimations_Internal.swift */,
 				4736893E1A83C3FE00C0F08F /* SwiftAnimations.h */,
@@ -208,7 +205,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				473689481A83C43600C0F08F /* DSLTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

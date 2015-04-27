@@ -115,6 +115,18 @@ run everything to see what will move around, and where.
 
 See more [in the article I wrote](http://www.miqu.me/blog/2015/02/05/swift-animations/)
 
+#Installation
+
+##Cocoapods
+Add the pod to your `Podfile`. Being a Swift-only library, it is required to be linked as a framework (dynanmic library).
+```Ruby
+use_frameworks!
+pod 'SwiftAnimations'
+```
+
+##Manual
+Just drop into your project the files under Source directory.
+
 #Author
 
 [Miguel Angel Quiñones](http://miqu.me) / [@miguelquinon](http://twitter.com/miguelquinon)

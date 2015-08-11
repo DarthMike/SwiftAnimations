@@ -11,6 +11,9 @@
 - Default values can be configured for all animations across all application. Change only the values that are different for the specific animation
 - Support for spring and standard animations
 
+#Swift 2.0
+Version 1.1 is using new Swift 2.0 syntax. If you wish to use the library with a previous version of Swift use any other release tag from the repository.
+
 #Chaining animations
 
 Turn complex sequences of animations into simple cascade and easy to read code:

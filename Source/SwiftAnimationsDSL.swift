@@ -9,9 +9,9 @@ import UIKit
 
 /// DSL entry point to start a standard animation. See `springAnimate` for spring animations.
 ///
-/// :param: action The animation block to execute. It is exactly the block that will be passed to `UIView.animateWithDuration` API
+/// - parameter action: The animation block to execute. It is exactly the block that will be passed to `UIView.animateWithDuration` API
 ///
-/// :returns: An instance of Animator. The Animator object will record all other animations that you chain. See it's public API.
+/// - returns: An instance of Animator. The Animator object will record all other animations that you chain. See it's public API.
 public func animate(action: Void->Void) -> Animator {
     let firstAnimation = Animation(action: action)
     let list = AnimationList(first: firstAnimation)
@@ -20,9 +20,9 @@ public func animate(action: Void->Void) -> Animator {
 
 /// DSL entry point to start a standard animation. See `animate` for standard animations.
 ///
-/// :param: action The animation block to execute. It is exactly the block that will be passed to `UIView.animateWithDuration` API
+/// - parameter action: The animation block to execute. It is exactly the block that will be passed to `UIView.animateWithDuration` API
 ///
-/// :returns: An instance of Animator. The Animator object will record all other animations that you chain. See it's public API.
+/// - returns: An instance of Animator. The Animator object will record all other animations that you chain. See it's public API.
 public func springAnimate(action: Void->Void) -> Animator {
     let firstAnimation = Animation(action: action)
     let list = AnimationList(first: firstAnimation)
@@ -48,9 +48,9 @@ public struct Animator {
     /// The animation will be run after the previous animation completes. It's equivalent to
     /// `UIView.animateWithDuration` and run another `UIView.animateWithDuration` as the completion block
     /// 
-    /// :param: action The animation block to execute. It is exactly the block that will be passed to UIView.animateWithDuration API
+    /// - parameter action: The animation block to execute. It is exactly the block that will be passed to UIView.animateWithDuration API
     /// 
-    /// :returns: An instance of Animator. Use it to chain follow-up calls, or configuration calls for current animation.
+    /// - returns: An instance of Animator. Use it to chain follow-up calls, or configuration calls for current animation.
     public func thenAnimate(action: Void->Void) -> Animator {
         let newAnimation = Animation(action: action)
         self.animations.append(newAnimation)
@@ -64,9 +64,9 @@ public struct Animator {
     /// Calling this method after the DSL entry point, or `thenAnimate` will modify the duration of the
     /// last specified animation. If you don't call this then the default animation duration value will be used.
     /// 
-    /// :param: duration The amount of time animation should run. Exactly same parameter as `UIView.animateWithDuration`
+    /// - parameter duration: The amount of time animation should run. Exactly same parameter as `UIView.animateWithDuration`
     /// 
-    /// :returns: An instance of Animator. Use it to chain follow-up calls, or configuration calls for current animation.
+    /// - returns: An instance of Animator. Use it to chain follow-up calls, or configuration calls for current animation.
     public func withDuration(duration: NSTimeInterval) -> Animator {
         self.animations.last.configuration.duration = duration
         return self
@@ -77,9 +77,9 @@ public struct Animator {
     /// Calling this method after the DSL entry point, or `thenAnimate` will modify the options of the
     /// last specified animation. If you don't call this then the default options will be used.
     /// 
-    /// :param: options The options of the animation. Exactly same parameter as `UIView.animateWithDuration`
+    /// - parameter options: The options of the animation. Exactly same parameter as `UIView.animateWithDuration`
     /// 
-    /// :returns: An instance of Animator. Use it to chain follow-up calls, or configuration calls for current animation.
+    /// - returns: An instance of Animator. Use it to chain follow-up calls, or configuration calls for current animation.
     public func withOptions(options: UIViewAnimationOptions) -> Animator {
         self.animations.last.configuration.options = options
         return self
@@ -87,9 +87,9 @@ public struct Animator {
     
     /// Follow-up call to modify the type of the last specified animation.
     /// 
-    /// :param: type The type of animation. See `AnimationType` for values.
+    /// - parameter type: The type of animation. See `AnimationType` for values.
     /// 
-    /// :returns: An instance of Animator. Use it to chain follow-up calls, or configuration calls for current animation.
+    /// - returns: An instance of Animator. Use it to chain follow-up calls, or configuration calls for current animation.
     public func withType(type: AnimationType) -> Animator {
         self.animations.last.configuration.type = type
         return self
@@ -100,9 +100,9 @@ public struct Animator {
     /// Calling this method after the DSL entry point, or `thenAnimate` will modify the options of the
     /// last specified animation. If the last animation is not spring type, then this will be ignored. See `withType:`
     /// 
-    /// :param: damping The spring damping value. Exactly same parameter as in `UIView.animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:`
+    /// - parameter damping: The spring damping value. Exactly same parameter as in `UIView.animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:`
     ///
-    /// :returns: An instance of Animator. Use it to chain follow-up calls, or configuration calls for current animation.
+    /// - returns: An instance of Animator. Use it to chain follow-up calls, or configuration calls for current animation.
     public func withSpringDamping(damping: CGFloat) -> Animator {
         self.animations.last.springConfiguration.damping = damping
         return self.withType(.Spring)
@@ -113,9 +113,9 @@ public struct Animator {
     /// Calling this method after the DSL entry point, or `thenAnimate` will modify the options of the
     /// last specified animation. If the last animation is not spring type, then this will be ignored. See `withType:'
     /// 
-    /// :param: velocity The initial spring velocity value. Exactly same parameter as in `UIView.animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:`
+    /// - parameter velocity: The initial spring velocity value. Exactly same parameter as in `UIView.animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:`
     ///
-    /// :returns: An instance of Animator. Use it to chain follow-up calls, or configuration calls for current animation.
+    /// - returns: An instance of Animator. Use it to chain follow-up calls, or configuration calls for current animation.
     public func withInitialVelocity(velocity: CGFloat) -> Animator {
         self.animations.last.springConfiguration.initialVelocity = velocity
         return self.withType(.Spring)
@@ -127,7 +127,7 @@ public struct Animator {
     /// 
     /// **Important** If you don't call this method, no animation will be executed.
     ///
-    /// :param: completion The completion closure of nil if you are not interested in completion
+    /// - parameter completion: The completion closure of nil if you are not interested in completion
     public func completion(completion: AnimationCompletion?) {
         let first = animations.first
         self.animateRecursive(first, completion: completion)
@@ -174,7 +174,7 @@ public enum AnimationType {
 /// Instead of specifying animation values for every animation, you can set the default value using this function
 /// and all animations will use it. You can instead tweak animations that are not following your default value.
 ///
-/// :param: duration The default duration
+/// - parameter duration: The default duration
 public func setDefaultAnimationDuration(duration: NSTimeInterval) {
     globalDefaults = AnimationValues(duration: duration, options: globalDefaults.options, type: globalDefaults.type)
 }
@@ -184,7 +184,7 @@ public func setDefaultAnimationDuration(duration: NSTimeInterval) {
 /// Instead of specifying animation values for every animation, you can set the default value using this function
 /// and all animations will use it. You can instead tweak animations that are not following your default value.
 ///
-/// :param: curve The curve to use for all animations
+/// - parameter curve: The curve to use for all animations
 public func setDefaultAnimationCurve(curve: UIViewAnimationCurve) {
     globalDefaults = AnimationValues(duration: globalDefaults.duration, options: UIViewAnimationOptions.fromCurve(curve), type: globalDefaults.type)
 }
@@ -194,7 +194,7 @@ public func setDefaultAnimationCurve(curve: UIViewAnimationCurve) {
 /// Instead of specifying animation values for every animation, you can set the default value using this function
 /// and all animations will use it. You can instead tweak animations that are not following your default value.
 ///
-/// :param: type The default animation type
+/// - parameter type: The default animation type
 public func setDefaultAnimationType(type: AnimationType) {
     globalDefaults = AnimationValues(duration: globalDefaults.duration, options: globalDefaults.options, type: type)
 }
@@ -204,7 +204,7 @@ public func setDefaultAnimationType(type: AnimationType) {
 /// Instead of specifying animation values for every animation, you can set the default value using this function
 /// and all animations will use it. You can instead tweak animations that are not following your default value.
 ///
-/// :param: damping The default spring damping value
+/// - parameter damping: The default spring damping value
 public func setDefaultSpringDamping(damping: CGFloat) {
     globalSpringDefaults = SpringValues(damping: damping, initialVelocity: globalSpringDefaults.initialVelocity)
 }
@@ -214,7 +214,7 @@ public func setDefaultSpringDamping(damping: CGFloat) {
 /// Instead of specifying animation values for every animation, you can set the default value using this function
 /// and all animations will use it. You can instead tweak animations that are not following your default value.
 ///
-/// :param: velocity The default velocity value
+/// - parameter velocity: The default velocity value
 public func setDefaultInitialVelocity(velocity: CGFloat) {
     globalSpringDefaults = SpringValues(damping: globalSpringDefaults.damping, initialVelocity: velocity)
 }

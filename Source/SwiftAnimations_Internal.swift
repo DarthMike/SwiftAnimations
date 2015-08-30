@@ -60,7 +60,7 @@ internal struct AnimationList {
     var last: Animation {
         get {
             var node = first
-            do {
+            repeat {
                 if let nextNode = node.next  {
                     node = nextNode
                 }

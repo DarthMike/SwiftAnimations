@@ -11,6 +11,7 @@
 		473689411A83C3FE00C0F08F /* SwiftAnimations.h in Headers */ = {isa = PBXBuildFile; fileRef = 4736893E1A83C3FE00C0F08F /* SwiftAnimations.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		473689421A83C3FE00C0F08F /* SwiftAnimationsDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4736893F1A83C3FE00C0F08F /* SwiftAnimationsDSL.swift */; };
 		473689581A83CEE300C0F08F /* SwiftAnimations_Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473689571A83CEE300C0F08F /* SwiftAnimations_Internal.swift */; };
+		47F654271BEFFCF600E2A847 /* SwiftAnimationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F654251BEFFCEE00E2A847 /* SwiftAnimationsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		473689531A83C6B900C0F08F /* SwiftAnimations-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAnimations-Info.plist"; path = "Resources/SwiftAnimations-Info.plist"; sourceTree = SOURCE_ROOT; };
 		473689541A83C6B900C0F08F /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Tests-Info.plist"; path = "Resources/Tests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		473689571A83CEE300C0F08F /* SwiftAnimations_Internal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftAnimations_Internal.swift; path = Source/SwiftAnimations_Internal.swift; sourceTree = SOURCE_ROOT; };
+		47F654251BEFFCEE00E2A847 /* SwiftAnimationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftAnimationsTests.swift; path = Tests/SwiftAnimationsTests.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				473689571A83CEE300C0F08F /* SwiftAnimations_Internal.swift */,
 				4736893E1A83C3FE00C0F08F /* SwiftAnimations.h */,
 				4736893F1A83C3FE00C0F08F /* SwiftAnimationsDSL.swift */,
+				47F654251BEFFCEE00E2A847 /* SwiftAnimationsTests.swift */,
 			);
 			path = SwiftAnimations;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47F654271BEFFCF600E2A847 /* SwiftAnimationsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

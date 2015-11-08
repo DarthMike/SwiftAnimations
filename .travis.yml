@@ -1,0 +1,4 @@
+language: swift
+xcode_project: SwiftAnimations.xcodeproj 
+xcode_scheme: SwiftAnimations
+xcode_sdk: iphonesimulator

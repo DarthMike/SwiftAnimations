@@ -120,7 +120,7 @@ See more [in the article I wrote](http://www.miqu.me/blog/2015/02/05/swift-anima
 
 #Installation
 
-##Cocoapods
+##CocoaPods
 Add the pod to your `Podfile`. Being a Swift-only library, it is required to be linked as a framework (dynamic library).
 ```Ruby
 use_frameworks!

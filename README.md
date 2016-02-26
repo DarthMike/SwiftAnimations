@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/DarthMike/SwiftAnimations.svg?branch=master)](https://travis-ci.org/DarthMike/SwiftAnimations)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![codebeat badge](https://codebeat.co/badges/bbdd604a-0264-4c2f-8b8b-eb5d22ba4b60)](https://codebeat.co/projects/github-com-darthmike-swiftanimations)
+[![cocoapods-doc](https://img.shields.io/cocoapods/metrics/doc-percent/SwiftAnimations.svg)](http://cocoadocs.org/docsets/SwiftAnimations/1.1.2/)
 
 # SwiftAnimations
 

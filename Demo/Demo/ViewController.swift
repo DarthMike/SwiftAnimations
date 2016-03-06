@@ -36,7 +36,7 @@ class ViewController: UIViewController {
             self.blue.transform = scale
             self.yellow.transform = scale
         }.thenAnimate(reset).completion { completed in
-            println("Completed!")
+            print("Completed!")
         }
     }
     

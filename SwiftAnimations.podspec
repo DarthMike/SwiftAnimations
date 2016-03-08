@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SwiftAnimations"
-  s.version          = "1.1.2"
+  s.version          = "1.1.3"
   s.summary          = "A small DSL to chain animations on top of UIKit"
   s.description      = <<-DESC
 UIKit animations API is designed to be simple. It does it job very well for fire-and-forget animations. But there are some times where the application demands not so simple animations.

@@ -45,4 +45,3 @@ class ViewController: UIViewController {
     @IBOutlet private var blue: UIView!
     @IBOutlet private var yellow: UIView!
 }
-

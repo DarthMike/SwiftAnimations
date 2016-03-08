@@ -134,10 +134,10 @@ public struct Animator {
     }
     
     private func animateRecursive(animation: Animation, completion: AnimationCompletion? = nil) {
-        let completion = { (completed: Bool)->(Void) in
+        let completion = { (completed: Bool) -> (Void) in
             if let next = animation.next {
                 self.animateRecursive(next, completion: completion)
-                return;
+                return
             }
             
             if let completion = completion {

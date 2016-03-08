@@ -111,6 +111,7 @@
 			buildConfigurationList = 473688D91A83C0C400C0F08F /* Build configuration list for PBXNativeTarget "SwiftAnimations" */;
 			buildPhases = (
 				473688BE1A83C0C300C0F08F /* Sources */,
+				471602CC1C8CFADE007C2225 /* ShellScript */,
 				473688BF1A83C0C300C0F08F /* Frameworks */,
 				473688C01A83C0C300C0F08F /* Headers */,
 				473688C11A83C0C300C0F08F /* Resources */,
@@ -195,6 +196,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		471602CC1C8CFADE007C2225 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\necho 'helloooo!'\npwd\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		473688BE1A83C0C300C0F08F /* Sources */ = {

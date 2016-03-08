@@ -8,7 +8,7 @@
 
 import XCTest
 
-class Test : XCTestCase {
+class Test: XCTestCase {
     
     func testDummy() {
         // Test stub (verifies test target works)

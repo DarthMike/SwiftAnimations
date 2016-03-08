@@ -23,13 +23,13 @@ extension UIViewAnimationOptions {
 
 // MARK: Defaults
 
-internal struct AnimationValues  {
+internal struct AnimationValues {
     var duration: NSTimeInterval  = 0.4
     var options: UIViewAnimationOptions = .CurveEaseOut
     var type: AnimationType = .Regular
 }
 
-internal struct SpringValues  {
+internal struct SpringValues {
     var damping: CGFloat = 0.4
     var initialVelocity: CGFloat = 0.2
 }
@@ -61,7 +61,7 @@ internal struct AnimationList {
         get {
             var node = first
             repeat {
-                if let nextNode = node.next  {
+                if let nextNode = node.next {
                     node = nextNode
                 }
             } while node.next != nil

@@ -21,6 +21,6 @@ There are often times when two or three animations need to be chained to achieve
   s.requires_arc = true
   s.ios.deployment_target = '8.0'
   s.module_name = 'SwiftAnimations'
-  s.source_files = 'Source/*'
+  s.source_files = 'Sources/*'
 
 end

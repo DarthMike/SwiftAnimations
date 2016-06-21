@@ -72,6 +72,19 @@ public struct Animator {
         return self
     }
     
+    /// Follow-up call to modify delay of the last specified animation.
+    ///
+    /// Calling this method after the DSL entry point, or `thenAnimate` will modify the duration of the
+    /// last specified animation. If you don't call this then the default animation delay value will be used.
+    ///
+    /// - parameter delay: The delay before animation runs. Exactly same parameter as `UIView.animateWithDuration`
+    ///
+    /// - returns: An instance of Animator. Use it to chain follow-up calls, or configuration calls for current animation.
+    public func afterDelay(delay: NSTimeInterval) -> Animator {
+        self.animations.last.configuration.delay = delay
+        return self
+    }
+    
     /// Follow-up call to modify the options of the last specified animation.
     /// 
     /// Calling this method after the DSL entry point, or `thenAnimate` will modify the options of the
@@ -147,9 +160,9 @@ public struct Animator {
         
         switch animation.configuration.type {
         case .Regular:
-            UIView.animateWithDuration(animation.configuration.duration, delay: 0.0, options: animation.configuration.options, animations: animation.action, completion: completion)
+            UIView.animateWithDuration(animation.configuration.duration, delay: animation.configuration.delay, options: animation.configuration.options, animations: animation.action, completion: completion)
         case .Spring:
-            UIView.animateWithDuration(animation.configuration.duration, delay: 0.0, usingSpringWithDamping: animation.springConfiguration.damping, initialSpringVelocity: animation.springConfiguration.damping, options: animation.configuration.options, animations: animation.action, completion: completion)
+            UIView.animateWithDuration(animation.configuration.duration, delay: animation.configuration.delay, usingSpringWithDamping: animation.springConfiguration.damping, initialSpringVelocity: animation.springConfiguration.damping, options: animation.configuration.options, animations: animation.action, completion: completion)
         }
     }
    
@@ -176,7 +189,17 @@ public enum AnimationType {
 ///
 /// - parameter duration: The default duration
 public func setDefaultAnimationDuration(duration: NSTimeInterval) {
-    globalDefaults = AnimationValues(duration: duration, options: globalDefaults.options, type: globalDefaults.type)
+    globalDefaults = AnimationValues(duration: duration, delay:globalDefaults.delay, options: globalDefaults.options, type: globalDefaults.type)
+}
+
+/// Sets the default animation delay for all animations.
+///
+/// Instead of specifying animation values for every animation, you can set the default value using this function
+/// and all animations will use it. You can instead tweak animations that are not following your default value.
+///
+/// - parameter delay: The default delay
+public func setDefaultAnimationDelay(delay: NSTimeInterval) {
+    globalDefaults = AnimationValues(duration: globalDefaults.duration, delay:delay, options: globalDefaults.options, type: globalDefaults.type)
 }
 
 /// Sets the default animation curve for all animations.
@@ -186,7 +209,7 @@ public func setDefaultAnimationDuration(duration: NSTimeInterval) {
 ///
 /// - parameter curve: The curve to use for all animations
 public func setDefaultAnimationCurve(curve: UIViewAnimationCurve) {
-    globalDefaults = AnimationValues(duration: globalDefaults.duration, options: UIViewAnimationOptions.fromCurve(curve), type: globalDefaults.type)
+    globalDefaults = AnimationValues(duration: globalDefaults.duration, delay: globalDefaults.delay, options: UIViewAnimationOptions.fromCurve(curve), type: globalDefaults.type)
 }
 
 /// Sets the default animation type for all animations.
@@ -196,7 +219,7 @@ public func setDefaultAnimationCurve(curve: UIViewAnimationCurve) {
 ///
 /// - parameter type: The default animation type
 public func setDefaultAnimationType(type: AnimationType) {
-    globalDefaults = AnimationValues(duration: globalDefaults.duration, options: globalDefaults.options, type: type)
+    globalDefaults = AnimationValues(duration: globalDefaults.duration, delay: globalDefaults.delay, options: globalDefaults.options, type: type)
 }
 
 /// Sets the default spring animation damping value for all animations.

@@ -25,6 +25,7 @@ extension UIViewAnimationOptions {
 
 internal struct AnimationValues {
     var duration: NSTimeInterval  = 0.4
+    var delay: NSTimeInterval = 0
     var options: UIViewAnimationOptions = .CurveEaseOut
     var type: AnimationType = .Regular
 }

@@ -31,7 +31,8 @@ animate {
   self.red.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
 }.thenAnimate {   // Chain animations, to be executed in order
   self.green.transform = CGAffineTransformMakeRotation(-CGFloat(M_PI_2))
-}.thenAnimate {
+}.afterDelay(1)
+ .thenAnimate {
   self.blue.transform = CGAffineTransformMakeScale(1.5, 1)
 }.withOptions(.CurveEaseOut).thenAnimate {
   self.yellow.transform = CGAffineTransformMakeScale(1, 1.5)
@@ -78,6 +79,7 @@ animate {
 }.withDuration(0.1).withType(.Spring).thenAnimate {
   // Animation 3
 }.withType(.Regular)
+ .afterDelay(0.2)
 
 ```
 

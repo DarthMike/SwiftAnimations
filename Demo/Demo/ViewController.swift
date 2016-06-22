@@ -25,11 +25,14 @@ class ViewController: UIViewController {
             self.red.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
         }.thenAnimate {
             self.green.transform = CGAffineTransformMakeRotation(-CGFloat(M_PI_2))
-        }.thenAnimate {
+        }.afterDelay(1)
+         .thenAnimate {
             self.blue.transform = CGAffineTransformMakeScale(1.5, 1)
         }.withOptions(.CurveLinear).withDuration(1).thenAnimate {
             self.yellow.transform = CGAffineTransformMakeScale(1, 1.5)
-        }.withOptions(.CurveEaseIn).thenAnimate {
+        }.withOptions(.CurveEaseIn)
+         
+         .thenAnimate {
             let scale = CGAffineTransformMakeScale(0.5, 0.5)
             self.red.transform = scale
             self.green.transform = scale

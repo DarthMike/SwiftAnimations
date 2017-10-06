@@ -7,16 +7,16 @@ import UIKit
 
 // MARK: Curve->Options
 extension UIViewAnimationOptions {
-    static func fromCurve(curve: UIViewAnimationCurve) -> UIViewAnimationOptions {
+    static func fromCurve(_ curve: UIViewAnimationCurve) -> UIViewAnimationOptions {
         switch curve {
-        case .EaseIn:
-            return .CurveEaseIn
-        case .EaseInOut:
-            return .CurveEaseInOut
-        case .EaseOut:
-            return .CurveEaseOut
-        case .Linear:
-            return .CurveLinear
+        case .easeIn:
+            return .curveEaseIn
+        case .easeInOut:
+            return UIViewAnimationOptions()
+        case .easeOut:
+            return .curveEaseOut
+        case .linear:
+            return .curveLinear
         }
     }
 }
@@ -24,10 +24,10 @@ extension UIViewAnimationOptions {
 // MARK: Defaults
 
 internal struct AnimationValues {
-    var duration: NSTimeInterval  = 0.4
-    var delay: NSTimeInterval = 0
-    var options: UIViewAnimationOptions = .CurveEaseOut
-    var type: AnimationType = .Regular
+    var duration: TimeInterval  = 0.4
+    var delay: TimeInterval = 0
+    var options: UIViewAnimationOptions = .curveEaseOut
+    var type: AnimationType = .regular
 }
 
 internal struct SpringValues {
@@ -40,9 +40,9 @@ var globalSpringDefaults = SpringValues()
 
 // MARK: Internal animation data structures
 internal class Animation {
-    typealias AnimationAction = Void -> Void
+    typealias AnimationAction = () -> Void
     
-    init(action: AnimationAction) {
+    init(action: @escaping AnimationAction) {
         self.action = action
         self.configuration = globalDefaults
         self.springConfiguration = globalSpringDefaults
@@ -59,19 +59,17 @@ internal struct AnimationList {
     let first: Animation
     
     var last: Animation {
-        get {
-            var node = first
-            repeat {
-                if let nextNode = node.next {
-                    node = nextNode
-                }
-            } while node.next != nil
-            
-            return node
-        }
+        var node = first
+        repeat {
+            if let nextNode = node.next {
+                node = nextNode
+            }
+        } while node.next != nil
+        
+        return node
     }
     
-    func append(animation: Animation) -> AnimationList {
+    func append(_ animation: Animation) -> AnimationList {
         self.last.next = animation
         return AnimationList(first: first)
     }

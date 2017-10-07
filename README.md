@@ -14,14 +14,14 @@
 
 `SwiftAnimations` is a small DSL to chain of animations on top of UIKit, unify animation parameters across all application and simplify even more your animation code.
 
-#Features
+# Features
 - Chain simple animations with less and more concise code
 - Sensible default values, so you don't repeat information across all animation blocks
 - Opt in to configure whatever values you see fit on every animation, as opposed to declaring (and repeating) whole list of parameters for every one
 - Default values can be configured for all animations across all application. Change only the values that are different for the specific animation
 - Support for spring and standard animations
 
-#Chaining animations
+# Chaining animations
 
 Turn complex sequences of animations into simple cascade and easy to read code:
 
@@ -48,7 +48,7 @@ animate {
 }
 ```
 
-#Unified animation values and default values
+# Unified animation values and default values
 `SwiftAnimations` configures all animations with default values for duration, curve, and spring damping and velocity. You can change this globally or per-animation.
 ```swift
 // All animations in my app have a baseline of 0.35. I rarely change this
@@ -67,7 +67,7 @@ setDefaultInitialVelocity(0.3)
 
 If you don't specify default values, the library will use the default ones.
 
-#Per-animation parameters
+# Per-animation parameters
 
 You can also change specific values per-animation:
 
@@ -83,7 +83,7 @@ animate {
 
 ```
 
-#Roadmap
+# Roadmap
 Later I will be adding redefined animations. And maybe a way to configure those as well across all application code.
 
 ```swift
@@ -93,7 +93,7 @@ animate(flip(self.avatarView))
 
 **Suggestions and pull requests welcome :)**
 
-#Why?
+# Why?
 
 UIKit animations API is designed to be simple. It does it job very well for fire-and-forget animations. But there are some times where
 the application demands not so simple animations.
@@ -129,7 +129,7 @@ run everything to see what will move around, and where.
 
 See more [in the article I wrote](http://www.miqu.me/blog/2015/02/05/swift-animations/)
 
-#Installation
+# Installation
 
 ##CocoaPods
 Add the pod to your `Podfile`. Being a Swift-only library, it is required to be linked as a framework (dynamic library).
@@ -138,7 +138,7 @@ use_frameworks!
 pod 'SwiftAnimations'
 ```
 
-##Carthage
+## Carthage
 Add the repository to your Cartfile.
 ```Bash
 github "DarthMike/SwiftAnimations"
@@ -146,13 +146,13 @@ github "DarthMike/SwiftAnimations"
 
 Then drag and drop the produced SwiftAnimations.framework from Carthage/build
 
-##Manual
+## Manual
 Just drop into your project the files under Source directory.
 
-#Author
+# Author
 
 [Miguel Angel Quiñones](http://miqu.me) / [@miguelquinon](http://twitter.com/miguelquinon)
 
-#Inspiration
+# Inspiration
 
 This idea took off from working in my current project using Swift, and after seeing [Spring](https://github.com/MengTo/Spring)

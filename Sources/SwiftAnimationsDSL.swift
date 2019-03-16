@@ -95,7 +95,7 @@ public struct Animator {
     /// 
     /// - returns: An instance of Animator. Use it to chain follow-up calls, or configuration calls for current animation.
     @discardableResult
-    public func withOptions(_ options: UIViewAnimationOptions) -> Animator {
+    public func withOptions(_ options: UIView.AnimationOptions) -> Animator {
         self.animations.last.configuration.options = options
         return self
     }
@@ -213,8 +213,8 @@ public func setDefaultAnimationDelay(_ delay: TimeInterval) {
 /// and all animations will use it. You can instead tweak animations that are not following your default value.
 ///
 /// - parameter curve: The curve to use for all animations
-public func setDefaultAnimationCurve(_ curve: UIViewAnimationCurve) {
-    globalDefaults = AnimationValues(duration: globalDefaults.duration, delay: globalDefaults.delay, options: UIViewAnimationOptions.fromCurve(curve), type: globalDefaults.type)
+public func setDefaultAnimationCurve(_ curve: UIView.AnimationCurve) {
+    globalDefaults = AnimationValues(duration: globalDefaults.duration, delay: globalDefaults.delay, options: UIView.AnimationOptions.fromCurve(curve), type: globalDefaults.type)
 }
 
 /// Sets the default animation type for all animations.

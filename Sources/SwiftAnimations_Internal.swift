@@ -6,13 +6,13 @@
 import UIKit
 
 // MARK: Curve->Options
-extension UIViewAnimationOptions {
-    static func fromCurve(_ curve: UIViewAnimationCurve) -> UIViewAnimationOptions {
+extension UIView.AnimationOptions {
+    static func fromCurve(_ curve: UIView.AnimationCurve) -> UIView.AnimationOptions {
         switch curve {
         case .easeIn:
             return .curveEaseIn
         case .easeInOut:
-            return UIViewAnimationOptions()
+            return UIView.AnimationOptions()
         case .easeOut:
             return .curveEaseOut
         case .linear:
@@ -26,7 +26,7 @@ extension UIViewAnimationOptions {
 internal struct AnimationValues {
     var duration: TimeInterval  = 0.4
     var delay: TimeInterval = 0
-    var options: UIViewAnimationOptions = .curveEaseOut
+    var options: UIView.AnimationOptions = .curveEaseOut
     var type: AnimationType = .regular
 }
 

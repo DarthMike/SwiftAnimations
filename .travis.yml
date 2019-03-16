@@ -1,7 +1,7 @@
 language: objective-c
-osx_image: xcode9.1
+osx_image: xcode10
 xcode_project: SwiftAnimations.xcodeproj 
 xcode_scheme: SwiftAnimations
-xcode_sdk: iphonesimulator11.1
+xcode_sdk: iphonesimulator12
 script:
   - xcodebuild

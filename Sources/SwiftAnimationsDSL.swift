@@ -194,7 +194,7 @@ public enum AnimationType {
 ///
 /// - parameter duration: The default duration
 public func setDefaultAnimationDuration(_ duration: TimeInterval) {
-    globalDefaults = AnimationValues(duration: duration, delay:globalDefaults.delay, options: globalDefaults.options, type: globalDefaults.type)
+    globalDefaults = AnimationValues(duration: duration, delay: globalDefaults.delay, options: globalDefaults.options, type: globalDefaults.type)
 }
 
 /// Sets the default animation delay for all animations.
@@ -204,7 +204,7 @@ public func setDefaultAnimationDuration(_ duration: TimeInterval) {
 ///
 /// - parameter delay: The default delay
 public func setDefaultAnimationDelay(_ delay: TimeInterval) {
-    globalDefaults = AnimationValues(duration: globalDefaults.duration, delay:delay, options: globalDefaults.options, type: globalDefaults.type)
+    globalDefaults = AnimationValues(duration: globalDefaults.duration, delay: delay, options: globalDefaults.options, type: globalDefaults.type)
 }
 
 /// Sets the default animation curve for all animations.

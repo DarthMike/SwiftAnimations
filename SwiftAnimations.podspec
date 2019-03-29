@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SwiftAnimations"
-  s.version          = "1.3.0"
+  s.version          = "1.4.0"
   s.summary          = "A small DSL to chain animations on top of UIKit"
   s.description      = <<-DESC
 UIKit animations API is designed to be simple. It does it job very well for fire-and-forget animations. But there are some times where the application demands not so simple animations.
@@ -22,5 +22,6 @@ There are often times when two or three animations need to be chained to achieve
   s.ios.deployment_target = '8.0'
   s.module_name = 'SwiftAnimations'
   s.source_files = 'Sources/*'
+  s.swift_version = '4.2'
 
 end
